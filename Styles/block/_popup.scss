@@ -1,0 +1,208 @@
+.popup {
+	display: none; /* Скрыть попап по умолчанию */
+	position: fixed; /* Оставить попап видимым при прокрутке страницы */
+	z-index: 99999; /* Поместить на верхний слой */
+	left: 0;
+	top: 0;
+	width: 100%; /* Полная ширина */
+	height: 100%; /* Полная высота */
+	background-color: rgba(0, 0, 0, 0.5); /* Черный фон с непрозрачностью */
+
+	&__content {
+		position: absolute;
+		background-color: #0c1417;
+		margin: 10% auto; /* Центрировать попап */
+		padding: 20px;
+
+		width: 100%; /* Ширина попапа */
+		max-width: 900px;
+
+		left: 50%;
+		transform: translateX(-50%);
+
+		@include mobile {
+			max-width: 360px;
+			margin: 15% auto;
+		}
+	}
+
+	&__content-decoration {
+		position: absolute;
+		bottom: 80px;
+		left: 0;
+
+		@include mobile {
+			width: 50px;
+			bottom: -8px;
+		}
+	}
+
+	// .popup__top
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		margin: 35px;
+
+		@include mobile {
+			display: flex;
+			justify-content: space-between;
+			margin: 0;
+			margin-bottom: 20px;
+		}
+	}
+
+	// .popup__body
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		margin-bottom: 110px;
+
+		@include mobile {
+			align-items: flex-start;
+			margin-bottom: 30px;
+		}
+	}
+
+	// .popup__approved
+
+	&__approved {
+		display: flex;
+		gap: 30px;
+		margin-bottom: 30px;
+
+		@include mobile {
+			align-items: center;
+		}
+	}
+
+	// .popup__approved-title
+
+	&__approved-title {
+		font-weight: 700;
+		font-size: 30px;
+		line-height: 113%;
+		text-align: center;
+
+		@include mobile {
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 170%;
+			text-align: left;
+		}
+	}
+
+	&__text {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 170%;
+		text-align: center;
+
+		margin-bottom: 30px;
+
+		@include mobile {
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 189%;
+
+			text-align: left;
+		}
+	}
+
+	// .popup__contacts
+
+	&__contacts {
+		display: flex;
+		align-items: flex-start;
+		gap: 20px;
+
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 150%;
+
+		@include mobile {
+			flex-direction: row;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 171%;
+			flex-wrap: wrap;
+
+			margin-bottom: 15px;
+
+			p {
+				margin: 0;
+			}
+		}
+	}
+
+	&__social {
+		margin-bottom: 15px;
+
+		@include mobile {
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 171%;
+
+			width: 100%;
+			text-align: left;
+		}
+	}
+}
+
+.close-btn {
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+
+	@include mobile {
+		width: 20px;
+		height: 20px;
+
+		top: 20px;
+		right: 20px;
+	}
+}
+
+.close-btn:hover,
+.close-btn:focus {
+	color: var(--color-accent);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.close-btn::before,
+.close-btn::after {
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 40px;
+	background-color: #fff;
+
+	@include mobile {
+		height: 20px;
+	}
+}
+
+.close-btn::before {
+	transform: rotate(45deg);
+	right: 18px;
+
+	@include mobile {
+		right: 9px;
+	}
+}
+
+.close-btn::after {
+	transform: rotate(-45deg);
+	right: 18px;
+
+	@include mobile {
+		right: 9px;
+	}
+}

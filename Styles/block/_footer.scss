@@ -1,0 +1,145 @@
+.footer {
+	background: #000;
+	border: 1px solid black;
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 50px;
+		padding-bottom: 50px;
+		position: relative;
+
+		@include mobile {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+
+	&__tablet-left {
+		display: flex;
+		gap: 70px;
+
+		@media (min-width: 1024px) and (max-width: 1200px) {
+			gap: 40px;
+		}
+
+		@include tablet {
+			flex-direction: column;
+			gap: 0;
+		}
+	}
+
+	&__tablet-right {
+		display: flex;
+		gap: 110px;
+
+		@media (min-width: 1024px) and (max-width: 1200px) {
+			gap: 40px;
+		}
+
+		@include tablet {
+			display: flex;
+			flex-direction: column-reverse;
+			align-items: flex-end;
+			gap: 0;
+		}
+
+		@include mobile {
+			flex-direction: column-reverse;
+			order: 2;
+			gap: 10px;
+			margin-top: 80px;
+			align-items: center;
+		}
+	}
+
+	&__section {
+		p {
+			margin: 0;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 171%;
+			color: rgba(255, 255, 255, 0.7);
+		}
+	}
+
+	&__left {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		margin-top: 60px;
+		gap: 16px;
+
+		@include mobile {
+			order: 3;
+		}
+	}
+
+	&__right {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+
+		@include tablet {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			align-items: flex-end;
+		}
+
+		@include mobile {
+			align-items: flex-start;
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		top: -100px;
+		left: -25px;
+
+		@include mobile {
+			top: -390px;
+			left: 0;
+		}
+	}
+
+	&__link {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 171%;
+		color: rgba(255, 255, 255, 0.7);
+
+		&:hover {
+			color: var(--color-accent);
+		}
+	}
+
+	&__middle-social {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 171%;
+		color: rgba(255, 255, 255, 0.7);
+
+		svg {
+			margin-top: 15px;
+		}
+	}
+
+	&__social {
+		fill: rgba(255, 255, 255, 0.7);
+
+		&:hover {
+			fill: var(--color-accent);
+		}
+	}
+}
+
+.social-mobile {
+	@include tablet {
+		text-align: right;
+	}
+	@include mobile {
+		text-align: center;
+	}
+}

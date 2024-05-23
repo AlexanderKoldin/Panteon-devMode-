@@ -1,0 +1,160 @@
+// Миксин для ховера
+@mixin hover {
+	&:hover {
+		color: var(--color-accent);
+	}
+}
+
+.gallery-content {
+	position: relative;
+}
+
+.gallery-content-img {
+	position: absolute;
+	left: 0;
+	bottom: -135px;
+
+	@include mobile {
+		height: 200px;
+		width: 166px;
+		bottom: -102px;
+		left: -68px;
+		z-index: -1;
+	}
+}
+
+.gallery {
+	&__title {
+		margin-bottom: 80px;
+		font-weight: 700;
+		font-size: 30px;
+		line-height: 113%;
+		text-align: center;
+	}
+
+	&__slider-top {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		margin-bottom: 60px;
+	}
+
+	&__swiper-prev,
+	&__swiper-next {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		width: 35px;
+		height: 22px;
+		cursor: pointer;
+
+		@include hover;
+	}
+
+	&__swiper-prev {
+		left: 10px;
+	}
+
+	&__swiper-next {
+		right: 10px;
+		rotate: 180deg;
+	}
+}
+
+.swiper {
+	display: flex;
+	max-width: 1162px;
+	align-items: center;
+
+	@media screen and (min-width: 1024px) and (max-width: 1200px) {
+		max-width: var(--large-screen-max-width);
+	}
+
+	@include tablet {
+		max-width: var(--tablet-max-width);
+	}
+}
+
+.swiper-wrapper {
+	box-sizing: content-box;
+}
+
+.swiper-slide {
+	display: flex;
+	margin-bottom: 30px;
+}
+
+.swiper-slide-top-img,
+.swiper-slide-bottom-img {
+	margin: 0 auto;
+}
+
+.swiper-scrollbar {
+	position: relative;
+	background-color: var(--color-light);
+	border-radius: 0;
+	max-width: 1000px;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+
+	@media screen and (min-width: 1024px) and (max-width: 1200px) {
+		max-width: var(--tablet-max-width);
+	}
+
+	@include tablet {
+		max-width: var(--tablet-max-width);
+	}
+	@include mobile {
+		max-width: var(--mobile-max-width);
+	}
+}
+
+.swiper-scrollbar-drag {
+	background-color: var(--color-accent);
+	border-radius: 0;
+	height: 10px;
+	top: -3px;
+}
+
+.gallery {
+	position: relative;
+	margin-bottom: 100px;
+
+	@include mobile {
+		margin-bottom: 80px;
+	}
+
+	&__slider-bottom {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+
+	&__swiper-prev-bottom,
+	&__swiper-next-bottom {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		width: 35px;
+		height: 22px;
+		cursor: pointer;
+
+		@include hover;
+	}
+
+	&__swiper-prev-bottom {
+		left: 30px;
+	}
+
+	&__swiper-next-bottom {
+		right: 30px;
+		rotate: 180deg;
+	}
+}
+

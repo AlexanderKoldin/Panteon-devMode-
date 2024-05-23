@@ -1,0 +1,162 @@
+.consulting {
+	position: relative;
+	background-image: url(../images/consulting-bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	// .consulting__content
+
+	&__content {
+		position: relative;
+		z-index: 3;
+		display: flex;
+		justify-content: flex-end;
+
+		@include tablet {
+			justify-content: center;
+		}
+	}
+
+	// .consulting__wrapper
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		// padding-right: 20px;
+	}
+
+	// .consulting__title
+
+	&__title {
+		padding-top: 110px;
+		margin-bottom: 25px;
+
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 125%;
+		text-align: center;
+
+		@media (max-width: 680px) {
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 150%;
+		}
+	}
+
+	// .consulting__text
+
+	&__text {
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 133%;
+		text-align: center;
+
+		max-width: 351px;
+
+		margin-bottom: 25px;
+
+		@media (max-width: 680px) {
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 150%;
+		}
+	}
+
+	&__button {
+		// font-weight: 700;
+
+		display: block;
+		margin: 30px auto;
+		font-size: 16px;
+		line-height: 125%;
+
+		border: 1px solid var(--color-light);
+		padding: 20px 33px;
+
+		transform: skew(-16deg);
+		transition: all 0.15s ease-out;
+
+		align-items: center;
+		background-color: transparent;
+		color: white;
+
+		span {
+			transform: skew(-16deg);
+		}
+
+		&:hover {
+			background-color: var(--color-accent);
+		}
+	}
+
+	&__description {
+		padding-bottom: 100px;
+		max-width: 280px;
+
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 143%;
+		text-align: center;
+		color: rgba(255, 255, 255, 0.5);
+	}
+}
+
+.form {
+	// display: flex;
+	// flex-direction: column;
+	// align-items: center;
+	// margin-bottom: 20px;
+
+	max-width: 351px;
+	width: 100%;
+	// width: 100%;
+
+	&__input-box {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__input-area {
+		width: 100%;
+	}
+
+	input[type='text'],
+	input[type='tel'] {
+		// Общие стили для всех полей ввода
+		font-size: 16px;
+
+		padding-bottom: 12px;
+		margin-bottom: 10px;
+		border: none; // Удаляем границу
+		border-bottom: 1px solid #fff; // Добавляем только нижний бордер
+		border-radius: 0; // Убираем скругление углов
+		background-color: transparent;
+		width: 100%; // Ширина поля ввода
+		max-width: 351px; // Максимальная ширина поля ввода
+		color: white;
+	}
+
+	// Стили для поля ввода с фокусом
+	input:focus {
+		outline: none;
+		border-color: #f7931e;
+		background-color: transparent;
+	}
+}
+
+.color-accent {
+	color: #f7931e;
+}
+
+.consulting::after {
+	content: '';
+	position: absolute; /* Абсолютное позиционирование относительно родителя */
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5); /* Черный цвет с 50% прозрачностью */
+	z-index: 1;
+}

@@ -1,0 +1,134 @@
+.contacts {
+	position: relative;
+
+	&__map {
+		height: 567px;
+		width: 100%;
+
+		@media (max-width: 680px) {
+			height: 234px;
+		}
+	}
+
+	&__content {
+		position: absolute;
+		top: 60px;
+		left: 15%;
+
+		z-index: 2;
+
+		background-color: var(--color-bg);
+		max-width: 396px;
+		padding: 50px 38px;
+
+		@media (max-width: 680px) {
+			position: static;
+			top: auto;
+			left: auto;
+
+			max-width: 274px;
+
+			margin: 0 auto;
+
+			padding: 50px 0px;
+		}
+
+		@include mobile {
+			left: 10%;
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: 30px;
+		line-height: 113%;
+
+		margin-bottom: 50px;
+
+		@media (max-width: 680px) {
+			font-weight: 700;
+			font-size: 25px;
+
+			text-align: center;
+		}
+	}
+
+	&__street {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 150%;
+
+		margin-bottom: 26px;
+
+		display: flex;
+		gap: 16px;
+
+		@media (max-width: 680px) {
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 171%;
+		}
+	}
+
+	&__time {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 150%;
+
+		margin-bottom: 27px;
+
+		display: flex;
+		gap: 16px;
+
+		@media (max-width: 680px) {
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 171%;
+		}
+	}
+
+	&__phone {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 150%;
+
+		margin-bottom: 40px;
+
+		display: flex;
+		gap: 16px;
+
+		@media (max-width: 680px) {
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 214%;
+		}
+	}
+
+	&__text {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 150%;
+
+		margin-bottom: 37px;
+
+		@media (max-width: 680px) {
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 171%;
+		}
+	}
+
+	&__social-img {
+		fill: var(--color-accent);
+
+		transition: fill 0.3s ease;
+
+		&:hover {
+			fill: #1a4b78;
+		}
+	}
+}
+
+[class*='copyrights-pane'] {
+	display: none !important;
+}

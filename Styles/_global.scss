@@ -1,0 +1,65 @@
+body {
+	font-family: var(--font-family);
+	font-weight: 500;
+	line-height: 1.28;
+	color: var(--color-main);
+	background-color: var(--color-bg);
+
+	@media (max-width: 760px) {
+		background-position: 25%;
+	}
+}
+
+img {
+	user-select: none; /* Отключает выделение для изображений в слайдере */
+	margin: 0;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+	transition-duration: var(--transition-duration);
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Для веб-кит браузеров */
+/* Изменение цвета полосы прокрутки */
+::-webkit-scrollbar {
+	width: 10px; /* Ширина полосы прокрутки */
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--color-bg); /* Цвет фона трека */
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #4d4d4d; /* Цвет полосы прокрутки */
+	border-radius: 5px;
+}
+
+/* Для остальных браузеров */
+/* Изменение цвета полосы прокрутки */
+scrollbar {
+	width: 10px; /* Ширина полосы прокрутки */
+	border-radius: 5px;
+}
+
+scrollbar-track {
+	background: var(--color-bg); /* Цвет фона трека */
+	border-radius: 5px;
+}
+
+scrollbar-thumb {
+	background: #4d4d4d; /* Цвет полосы прокрутки */
+	border-radius: 5px;
+}
+
+

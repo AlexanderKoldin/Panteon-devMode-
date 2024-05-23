@@ -1,0 +1,34 @@
+.hero__arrow {
+	display: inline-flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 100%;
+	width: 100%;
+
+	
+}
+
+.hero__arrow-img {
+	height: 50px;
+	width: auto;
+
+	cursor: pointer;
+}
+
+.hero__arrow img {
+	margin-bottom: 10px;
+	animation-iteration-count: infinite;
+	animation-duration: 1.5s;
+	animation: bounce 3.6s ease infinite;
+	transform-origin: bottom;
+}
+
+@keyframes bounce {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-15px);
+	}
+}
